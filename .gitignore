@@ -61,6 +61,6 @@ typings/
 *.db
 
 # settings and compiled files
-*/settings.py
 *.pyc
 .idea/
+/local_first_project/mysite/local_settings.py

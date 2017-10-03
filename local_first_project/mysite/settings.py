@@ -178,7 +178,8 @@ CMS_TEMPLATES = (
     ## Customize this
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
-    ('sidebar_right.html', 'Sidebar Right')
+    ('sidebar_right.html', 'Sidebar Right'),
+    ('small_business.html', "Local First"),
 )
 
 CMS_PERMISSION = True
@@ -201,9 +202,16 @@ MIGRATION_MODULES = {
     
 }
 
+
+
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+try:
+    from .local_settings import *
+except ImportError as e:
+    DEBUG = False
