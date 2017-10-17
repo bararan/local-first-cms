@@ -28,7 +28,9 @@ SECRET_KEY = 'pn9ic4bi_1d5i)9tt9ed+x$s0^=jsxfubz^g_)5@(dou=-slt%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['alxhghs.pythonanywhere.com',]
+ALLOWED_HOSTS = ['alxhghs.pythonanywhere.com',
+                 '127.0.0.1',
+                 ]
 
 
 # Application definition
@@ -148,7 +150,8 @@ INSTALLED_APPS = (
     'djangocms_snippet',
     'djangocms_googlemap',
     'djangocms_video',
-    'mysite'
+    'mysite',
+    'home_page',
 )
 
 LANGUAGES = (
