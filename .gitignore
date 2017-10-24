@@ -64,3 +64,6 @@ typings/
 *.pyc
 .idea/
 /local_first_project/mysite/local_settings.py
+
+# migrations
+/local_first_project/home_page/migrations/*
