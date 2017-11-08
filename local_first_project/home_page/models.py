@@ -77,3 +77,8 @@ class EventPicture(models.Model):
 
     class Meta:
         ordering = ('file_path',)
+
+class HomePageBox(models.Model):
+    title = models.CharField(max_length=40)
+    blurb = models.CharField(max_length=160)
+    link = models.URLField()
