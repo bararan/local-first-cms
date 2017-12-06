@@ -2,6 +2,13 @@ from django.db import models
 from django.core.validators import RegexValidator
 from django.utils.text import slugify
 
+'''
+Check out:
+*HTMLField
+*FilerFileField (3rd party)
+*FilerImageField (3rd party)
+'''
+
 class Business(models.Model):
     BUSINESS_TYPES = (
         ('shopping', 'Shopping'),
@@ -13,15 +20,15 @@ class Business(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     business_type = models.CharField(max_length=20, choices=BUSINESS_TYPES, default='shopping')
     description = models.CharField(max_length=500)
-    logo = models.FilePathField(blank=True)
+    logo = models.FilePathField(blank=True, null=True)
     address = models.CharField(max_length=300)
     phone_validator = RegexValidator(regex=r'^[1-9]\d{9}$', message='Invalid phone number!')
     phone_number = models.CharField(max_length=10, validators=[phone_validator])
     email = models.EmailField()
-    website = models.URLField(blank=True)
-    social_fb = models.URLField(blank=True)
-    social_twitter = models.URLField(blank=True)
-    social_instagram = models.URLField(blank=True)
+    website = models.URLField(blank=True, null=True)
+    social_fb = models.URLField(blank=True, null=True)
+    social_twitter = models.URLField(blank=True, null=True)
+    social_instagram = models.URLField(blank=True, null=True)
      # Add other social media links here if needed
 
     class Meta:
@@ -81,4 +88,4 @@ class EventPicture(models.Model):
 class HomePageBox(models.Model):
     title = models.CharField(max_length=40)
     blurb = models.CharField(max_length=160)
-    link = models.URLField(blank=True)
+    link = models.URLField(blank=True, null=True)

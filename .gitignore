@@ -67,3 +67,4 @@ typings/
 
 # migrations
 /local_first_project/home_page/migrations/*
+/local_first_project/home_page/local_first/*

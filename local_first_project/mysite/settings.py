@@ -30,6 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1',
                  'localfirst.pythonanywhere.com',
+                 'localhost'
                  ]
 
 
@@ -161,20 +162,20 @@ LANGUAGES = (
 
 CMS_LANGUAGES = {
     ## Customize this
-    1: [
-        {
-            'code': 'en',
-            'name': gettext('en'),
-            'redirect_on_fallback': True,
-            'public': True,
-            'hide_untranslated': False,
-        },
-    ],
-    'default': {
-        'redirect_on_fallback': True,
-        'public': True,
-        'hide_untranslated': False,
-    },
+    # 1: [
+    #     {
+    #         'code': 'en',
+    #         'name': gettext('en'),
+    #         'redirect_on_fallback': True,
+    #         'public': True,
+    #         'hide_untranslated': False,
+    #     },
+    # ],
+    # 'default': {
+    #     'redirect_on_fallback': True,
+    #     'public': True,
+    #     'hide_untranslated': False,
+    # },
 }
 
 CMS_TEMPLATES = (
@@ -214,7 +215,9 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters'
 )
 
-try:
-    from .local_settings import *
-except ImportError as e:
-    DEBUG = False
+# try:
+#     from .local_settings import *
+# except ImportError as e:
+#     DEBUG = False
+
+DEBUG = True
